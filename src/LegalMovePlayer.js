@@ -32,18 +32,18 @@ class LegalMovePlayer {
   }
 
   getReply(chat) {
-    console.log('incoming', chat);
+    console.log('incoming chat', chat);
     switch (chat.text) {
       case '!commands':
         return 'BotGeorge listens to the following commands: !info, !bullshit, !joke';
       case '!info':
-        return "I currently lacks a brain. It's being developed by @ansjovis86! You can challenge him to a real game!";
+        return "I'm @BotGeorge and I currently lack a brain. It's being developed by @ansjovis86! You can challenge him to a real game! I only play casual.";
       case '!joke':
         return "I don't know any jokes yet, but when I have a brain I will!";
       case '!bullshit':
         return 'Are you talking to me?';
       default:
-        return "Hi, I'm BotGeorge. You can play against me, but I'm currently quite suicidial. Just that you know!";
+        return '';
     }
   }
 }

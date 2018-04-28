@@ -24,7 +24,7 @@ class Game {
   handleChatLine(event) {
     if (event.username !== this.name) {
       const reply = this.player.getReply(event);
-      if (reply) {
+      if (reply && reply !== '') {
         this.api.chat(this.gameId, event.room, reply);
       }
     }
