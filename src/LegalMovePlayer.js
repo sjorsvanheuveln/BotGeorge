@@ -1,6 +1,6 @@
 const Chess = require('chess.js').Chess;
 
-var chess = new Chess();
+const chess = new Chess();
 
 /**
  * Pick a random legal move but prefers checks and mates.
@@ -25,10 +25,6 @@ class LegalMovePlayer {
     if (legalMoves.length === 0) {
       return;
     }
-    if (legalMoves.length === 'bullshit') {
-      console.log(this);
-      // sigh eslint
-    }
 
     const move = legalMoves[Math.floor(Math.random() * legalMoves.length)];
     const uciMove = move.from + move.to + (move.flags === 'p' ? move.piece : '');
@@ -45,7 +41,6 @@ class LegalMovePlayer {
       case '!joke':
         return "I don't know any jokes yet, but when I have a brain I will!";
       case '!bullshit':
-        console.log(this); // sigh eslint
         return 'Are you talking to me?';
       default:
         return "Hi, I'm BotGeorge. You can play against me, but I'm currently quite suicidial. Just that you know!";

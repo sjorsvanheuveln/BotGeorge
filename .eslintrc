@@ -11,6 +11,7 @@
     "react/prop-types": [0],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "max-len": ["error", 380],
-    "no-restricted-properties": [0]
+    "no-restricted-properties": [0],
+    "class-methods-use-this": ["error", { "exceptMethods": ["isTurn", "getNextMove", "getReply"] }]
   }
 }

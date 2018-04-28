@@ -57,11 +57,10 @@ class Game {
   playNextMove(previousMoves) {
     const moves = (previousMoves === '') ? [] : previousMoves.split(' ');
     if (this.isTurn(this.colour, moves)) {
-
       const nextMove = this.player.getNextMove(moves);
       if (nextMove) {
-        console.log("Given previous moves " + previousMoves);
-        console.log(this.name + " as " + this.colour + " to move " + nextMove);
+        console.log(`Given previous moves ${previousMoves}`);
+        console.log(`${this.name} as ${this.colour} to move ${nextMove}`);
         this.api.makeMove(this.gameId, nextMove);
       }
     }
@@ -69,12 +68,12 @@ class Game {
 
   playingAs(event) {
     console.log('playing as', event);
-    return (event.white.name === this.name) ? "white" : "black";
+    return (event.white.name === this.name) ? 'white' : 'black';
   }
 
   isTurn(colour, moves) {
-    var parity = moves.length % 2;
-    return (colour === "white") ? (parity === 0) : (parity === 1);
+    const parity = moves.length % 2;
+    return (colour === 'white') ? (parity === 0) : (parity === 1);
   }
 }
 
